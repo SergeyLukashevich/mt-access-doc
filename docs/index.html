@@ -1,0 +1,1058 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>MT Remote API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen-a1ce949a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-bccf8c07.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-c5541673.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;json&quot;,&quot;java&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-1e815a84.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="json">json</a>
+              <a href="#" data-language-name="java">java</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#native-api-cons" class="toc-h1 toc-link" data-title="Native API cons">Native API cons</a>
+          </li>
+          <li>
+            <a href="#mt-remote-pros" class="toc-h1 toc-link" data-title="MT Remote pros">MT Remote pros</a>
+          </li>
+          <li>
+            <a href="#language-bindings" class="toc-h1 toc-link" data-title="Language bindings">Language bindings</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#message-format" class="toc-h1 toc-link" data-title="Message format">Message format</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#request" class="toc-h2 toc-link" data-title="Request">Request</a>
+                  </li>
+                  <li>
+                    <a href="#successful-response" class="toc-h2 toc-link" data-title="Successful response">Successful response</a>
+                  </li>
+                  <li>
+                    <a href="#error-response" class="toc-h2 toc-link" data-title="Error response">Error response</a>
+                  </li>
+                  <li>
+                    <a href="#event" class="toc-h2 toc-link" data-title="Event">Event</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#protocol-workflow-todo" class="toc-h1 toc-link" data-title="Protocol workflow (TODO)">Protocol workflow (TODO)</a>
+          </li>
+          <li>
+            <a href="#connection" class="toc-h1 toc-link" data-title="Connection">Connection</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#connection-to-mt-remote" class="toc-h2 toc-link" data-title="Connection to MT Remote">Connection to MT Remote</a>
+                  </li>
+                  <li>
+                    <a href="#connection-to-mt4-server" class="toc-h2 toc-link" data-title="Connection to MT4 server">Connection to MT4 server</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#configuration" class="toc-h1 toc-link" data-title="Configuration">Configuration</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-common-configuration" class="toc-h2 toc-link" data-title="Get common configuration">Get common configuration</a>
+                  </li>
+                  <li>
+                    <a href="#set-common-configuration" class="toc-h2 toc-link" data-title="Set common configuration">Set common configuration</a>
+                  </li>
+                  <li>
+                    <a href="#group-creation" class="toc-h2 toc-link" data-title="Group creation">Group creation</a>
+                  </li>
+                  <li>
+                    <a href="#group-modification" class="toc-h2 toc-link" data-title="Group modification">Group modification</a>
+                  </li>
+                  <li>
+                    <a href="#group-receiving" class="toc-h2 toc-link" data-title="Group receiving">Group receiving</a>
+                  </li>
+                  <li>
+                    <a href="#group-deletion" class="toc-h2 toc-link" data-title="Group deletion">Group deletion</a>
+                  </li>
+                  <li>
+                    <a href="#tmp" class="toc-h2 toc-link" data-title="TMP">TMP</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the MT Remote! It&#39;s an application that provide you easy accessable API to <a href="https://en.wikipedia.org/wiki/MetaTrader_4">MT4 server</a>.
+You can use our API based on <a href="https://en.wikipedia.org/wiki/WebSocket">WebSocket</a> to use most functions provided by <a href="https://www.metatrader4.com/en/brokers/api">MT4 Manager API</a></p>
+<h1 id='native-api-cons'>Native API cons</h1>
+<p>To use MT4 Manager API provided by Metaquotes is possible only by loading provided Windows DLL. This aprroach cause few dissadvantages:</p>
+
+<ol>
+<li>Client application can be launched either on Windows, or use Windows emulator</li>
+<li>Client application should be written either on C++ or C#. As an option is possible to use language specific wrappers that cause performance drop and leads to neccessity to wrap every DLL function.</li>
+</ol>
+<h1 id='mt-remote-pros'>MT Remote pros</h1>
+<ol>
+<li>Modern, Web based connnection based on WebSockets</li>
+<li>Platform independant API</li>
+<li>Possibility to use ready client library. We have language bindings in Java. Python and PHP clients are in progress.</li>
+<li>Easy to use API to make you own client for any modern programming language.</li>
+<li>Hiden complexity of native API.</li>
+</ol>
+<h1 id='language-bindings'>Language bindings</h1>
+<ol>
+<li>Java - TODO</li>
+</ol>
+<h1 id='authentication'>Authentication</h1>
+<p>Not yet implemented. Is available native MT4 authentification.</p>
+<h1 id='message-format'>Message format</h1><h2 id='request'>Request</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ticks.get"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EURUSD"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Client to MT Remote</p>
+
+<ul>
+<li><code>id</code>. Request/response ID. Unique per session.</li>
+<li><code>name</code>. Called function name</li>
+<li><code>data</code>. Function specific parameters. Optional.</li>
+</ul>
+<h2 id='successful-response'>Successful response</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"ask"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.02001</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"bid"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.00001</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EURUSD"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1578993915</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>MT Remote to client</p>
+
+<ul>
+<li><code>id</code>. Response ID. Matches the respective request.</li>
+<li><code>status</code>. Response if successful if <code>OK</code>. All other values should treated as error.</li>
+<li><code>result</code>. Contains response data. Optional. </li>
+</ul>
+<h2 id='error-response'>Error response</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ERROR"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cannot find group 'test'"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>MT Remote to client</p>
+
+<ul>
+<li><code>id</code>. Response ID. Matches the respective request.</li>
+<li><code>status</code>. Response contains error if value is not <code>OK</code>.</li>
+<li><code>message</code>. Contains error description</li>
+</ul>
+<h2 id='event'>Event</h2><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"event"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tick"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"ask"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.02011</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bid"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.00011</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EURUSD"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1579083573</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>MT Remote to client</p>
+
+<ul>
+<li><code>event</code>. Event name.</li>
+<li><code>event_id</code>. Incremental event ID. Unique per session.</li>
+<li><code>data</code>. Contains event data.</li>
+</ul>
+<h1 id='protocol-workflow-todo'>Protocol workflow (TODO)</h1>
+<ol>
+<li><code>*.set</code> functions allows to update only few fields in existing record.</li>
+<li>Some field are read only.</li>
+</ol>
+<h1 id='connection'>Connection</h1><h2 id='connection-to-mt-remote'>Connection to MT Remote</h2><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">com.finplant.mt_remote_client.MtRemoteClient</span><span class="o">;</span>
+
+<span class="n">MtRemoteClient</span> <span class="n">client</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MtRemoteClient</span><span class="o">()</span>
+<span class="n">client</span><span class="o">.</span><span class="na">connect</span><span class="o">(</span><span class="n">URI</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="s">"ws://127.0.0.1"</span><span class="o">)).</span><span class="na">block</span><span class="o">();</span>
+</code></pre>
+<p>Connects to MT Remote service.</p>
+<h2 id='connection-to-mt4-server'>Connection to MT4 server</h2><pre class="highlight json tab-json"><code><span class="w">
+</span><span class="err">//</span><span class="w"> </span><span class="err">Request</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"connect"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"login"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"password"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reconnect_delay"</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="err">//</span><span class="w"> </span><span class="err">Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight java tab-java"><code><span class="n">client</span><span class="o">.</span><span class="na">connectToMt</span><span class="o">(</span><span class="s">"127.0.0.1"</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="s">"password"</span><span class="o">,</span> <span class="n">Duration</span><span class="o">.</span><span class="na">ofSeconds</span><span class="o">(</span><span class="mi">10</span><span class="o">)).</span><span class="na">block</span><span class="o">();</span>
+</code></pre>
+<p>Connects to MT4 server. Only one connection is allowed per WebSocket session.</p>
+
+<p>Function: <code>connect</code></p>
+
+<p>Request:</p>
+
+<ul>
+<li><code>server</code>. MT4 server hostname</li>
+<li><code>login</code>. MT4 manager login</li>
+<li><code>password</code>. MT4 manager password</li>
+<li><code>reconnect_delay</code>. MT4 connection restoration delay in milliseconds. Use 0 to disable.</li>
+</ul>
+<h1 id='configuration'>Configuration</h1><h2 id='get-common-configuration'>Get common configuration</h2><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">Request</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"config.common.get"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="err">//</span><span class="w"> </span><span class="err">Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"account_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://127.0.0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"adapters"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Killer Wireless-n_a_ac 1535 Wireless Network Adapter|"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"antiflood"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"antiflood_max_connections"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"bind_adresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"daylight_correction"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"end_of_day_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"end_of_day_minute"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"feeder_timeout_seconds"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"keep_emails_days"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"keep_ticks_days"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_activate_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_login"</span><span class="p">:</span><span class="w"> </span><span class="mi">249967816</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">249967816</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"liveupdate_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lost_commission_login"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000215517</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"monthly_state_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"optimization_last_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"optimization_time_minutes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23:0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"overmonth_last_month"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"overnight_last_day"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"overnight_last_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"overnight_prev_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"owner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Broker name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"path_database"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C:</span><span class="se">\\</span><span class="s2">dev</span><span class="se">\\</span><span class="s2">Tools</span><span class="se">\\</span><span class="s2">Servers</span><span class="se">\\</span><span class="s2">MetaTrader4Server</span><span class="se">\\</span><span class="s2">bases"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"path_history"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C:</span><span class="se">\\</span><span class="s2">dev</span><span class="se">\\</span><span class="s2">Tools</span><span class="se">\\</span><span class="s2">Servers</span><span class="se">\\</span><span class="s2">MetaTrader4Server</span><span class="se">\\</span><span class="s2">history"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"path_log"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C:</span><span class="se">\\</span><span class="s2">dev</span><span class="se">\\</span><span class="s2">Tools</span><span class="se">\\</span><span class="s2">Servers</span><span class="se">\\</span><span class="s2">MetaTrader4Server</span><span class="se">\\</span><span class="s2">logs"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">443</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rollovers_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"server_build"</span><span class="p">:</span><span class="w"> </span><span class="mi">1220</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"server_version"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"statement_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"statement_weekend"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"stop_delay_seconds"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"stop_last_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"stop_reason"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"time_of_demo_days"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timesync_server"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type_of_demo"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"web_adresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"127.0.0.1"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight java tab-java"><code><span class="n">client</span><span class="o">.</span><span class="na">config</span><span class="o">().</span><span class="na">common</span><span class="o">().</span><span class="na">get</span><span class="o">().</span><span class="na">block</span><span class="o">();</span>
+</code></pre>
+<p>Function: <code>config.common.get</code></p>
+
+<p>Returns <a href="#mt4concommon">Mt4ConCommon</a></p>
+<h2 id='set-common-configuration'>Set common configuration</h2><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">Request</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"config.common.set"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Demo"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"port"</span><span class="p">:</span><span class="w"> </span><span class="mi">443</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timeout"</span><span class="p">:</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"type_of_demo"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"time_of_demo_days"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"daylight_correction"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timesync_server"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"feeder_timeout_seconds"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"keep_emails_days"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"keep_ticks_days"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"statement_weekend"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"end_of_day_hour"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"end_of_day_minute"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"optimization_time_minutes"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23:0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"overmonth_last_month"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"antiflood"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"antiflood_max_connections"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"web_adresses"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"127.0.0.1"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"statement_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"liveupdate_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last_activate_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"stop_last_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"monthly_state_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rollovers_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"overnight_last_day"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"overnight_last_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"overnight_prev_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"stop_delay_seconds"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"stop_reason"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"account_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://127.0.0.1"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="err">//</span><span class="w"> </span><span class="err">Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight java tab-java"><code><span class="n">var</span> <span class="n">config</span> <span class="o">=</span> <span class="n">ConCommon</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">name</span><span class="o">(</span><span class="s">"Demo"</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">timeout</span><span class="o">(</span><span class="mi">180</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">client</span><span class="o">.</span><span class="na">config</span><span class="o">().</span><span class="na">common</span><span class="o">().</span><span class="na">set</span><span class="o">(</span><span class="n">config</span><span class="o">).</span><span class="na">block</span><span class="o">();</span>
+</code></pre>
+<p>Function: <code>config.common.set</code></p>
+
+<p>Parameter:</p>
+
+<ul>
+<li><a href="#mt4concommon">Mt4ConCommon</a></li>
+</ul>
+<h2 id='group-creation'>Group creation</h2><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">Request</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"config.group.add"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"enable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timeout_seconds"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"otp_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Signature"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"support_page"</span><span class="p">:</span><span class="w"> </span><span class="s2">"localhost"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"smtp_server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"smtp_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"login"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"smtp_password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"password"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"support_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a@a.lv"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"templates_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c:/"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"copies"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reports"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"default_leverage"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"default_deposit"</span><span class="p">:</span><span class="w"> </span><span class="mf">100000.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"max_symbols"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"credit"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"margin_call"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"margin_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"margin_stopout"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"interest_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"use_swap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"news"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rights"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"trailing"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"check_ie_prices"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"max_positions"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"close_reopen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hedge_prohibited"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"close_fifo"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hedge_large_leg"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"margin_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"archive_period"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"archive_max_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"stopout_skip_hedged"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"archive_pending_period"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"news_languages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"en-EN"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"ru-RU"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="err">//</span><span class="w"> </span><span class="err">Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight java tab-java"><code><span class="n">var</span> <span class="n">group</span> <span class="o">=</span> <span class="n">Mt4ConGroup</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">group</span><span class="o">(</span><span class="s">"test"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">enable</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">timeoutSeconds</span><span class="o">(</span><span class="mi">60</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">otpMode</span><span class="o">(</span><span class="n">Mt4ConGroup</span><span class="o">.</span><span class="na">OtpMode</span><span class="o">.</span><span class="na">DISABLED</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">company</span><span class="o">(</span><span class="s">"Company"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">signature</span><span class="o">(</span><span class="s">"Signature"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">supportPage</span><span class="o">(</span><span class="s">"localhost"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">smtpServer</span><span class="o">(</span><span class="n">MT_URL</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">smtpLogin</span><span class="o">(</span><span class="s">"login"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">smtpPassword</span><span class="o">(</span><span class="s">"password"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">supportEmail</span><span class="o">(</span><span class="s">"a@a.lv"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">templatesPath</span><span class="o">(</span><span class="s">"c:/"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">copies</span><span class="o">(</span><span class="mi">10</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">reports</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">defaultLeverage</span><span class="o">(</span><span class="mi">1000</span><span class="o">)</span> <span class="c1">// TODO</span>
+    <span class="o">.</span><span class="na">defaultDeposit</span><span class="o">(</span><span class="mf">100000.0</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">maxSymbols</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">currency</span><span class="o">(</span><span class="s">"EUR"</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">credit</span><span class="o">(</span><span class="mf">100.0</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">marginCall</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">marginMode</span><span class="o">(</span><span class="n">Mt4ConGroup</span><span class="o">.</span><span class="na">MarginMode</span><span class="o">.</span><span class="na">USE_ALL</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">marginStopout</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">interestRate</span><span class="o">(</span><span class="mf">0.0</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">useSwap</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">news</span><span class="o">(</span><span class="n">Mt4ConGroup</span><span class="o">.</span><span class="na">NewsMode</span><span class="o">.</span><span class="na">TOPICS</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">rights</span><span class="o">(</span><span class="n">Set</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">Mt4ConGroup</span><span class="o">.</span><span class="na">Rights</span><span class="o">.</span><span class="na">EMAIL</span><span class="o">,</span> <span class="n">Mt4ConGroup</span><span class="o">.</span><span class="na">Rights</span><span class="o">.</span><span class="na">TRAILING</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">checkIePrices</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">maxPositions</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">closeReopen</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">hedgeProhibited</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">closeFifo</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">hedgeLargeLeg</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">marginType</span><span class="o">(</span><span class="n">Mt4ConGroup</span><span class="o">.</span><span class="na">MarginType</span><span class="o">.</span><span class="na">CURRENCY</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">archivePeriod</span><span class="o">(</span><span class="mi">90</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">archiveMaxBalance</span><span class="o">(</span><span class="mi">10</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">stopoutSkipHedged</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">archivePendingPeriod</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">newsLanguages</span><span class="o">(</span><span class="n">Set</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"ru-RU"</span><span class="o">,</span> <span class="s">"en-EN"</span><span class="o">))</span>
+    <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">client</span><span class="o">.</span><span class="na">config</span><span class="o">().</span><span class="na">groups</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">group</span><span class="o">).</span><span class="na">block</span><span class="o">();</span>
+</code></pre>
+<p>Function: <code>config.group.add</code></p>
+
+<p>Parameter:</p>
+
+<ul>
+<li><a href="#mt4congroup">Mt4ConGroup</a></li>
+</ul>
+<h2 id='group-modification'>Group modification</h2><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">Request</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"config.group.set"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"enable"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="err">//</span><span class="w"> </span><span class="err">Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight java tab-java"><code><span class="n">var</span> <span class="n">group</span> <span class="o">=</span> <span class="n">Mt4ConGroup</span><span class="o">.</span><span class="na">builder</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">group</span><span class="o">(</span><span class="s">"test"</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">enable</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+
+<span class="n">client</span><span class="o">.</span><span class="na">config</span><span class="o">().</span><span class="na">groups</span><span class="o">().</span><span class="na">set</span><span class="o">(</span><span class="n">group</span><span class="o">).</span><span class="na">block</span><span class="o">();</span>
+</code></pre>
+<p>Function: <code>config.group.set</code></p>
+
+<p>Parameter:</p>
+
+<ul>
+<li><a href="#mt4congroup">Mt4ConGroup</a></li>
+</ul>
+<h2 id='group-receiving'>Group receiving</h2><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">Request</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"config.group.get"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="err">//</span><span class="w"> </span><span class="err">Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"archive_max_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"archive_pending_period"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"archive_period"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"check_ie_prices"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"close_fifo"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"close_reopen"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Company"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"copies"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"credit"</span><span class="p">:</span><span class="w"> </span><span class="mf">100.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EUR"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"default_deposit"</span><span class="p">:</span><span class="w"> </span><span class="mf">100000.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"default_leverage"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"enable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hedge_large_leg"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"hedge_prohibited"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"interest_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"margin_call"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"margin_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"margin_stopout"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"margin_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"max_positions"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"max_symbols"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"news"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"news_languages"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"ru-RU"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"en-EN"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"otp_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reports"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rights"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"trailing"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"securities"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"CFD"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"auto_closeout_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_agent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_agent_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_agent_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_base"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_lots_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"execution_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"free_margin_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ie_deviation"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ie_quick_mode"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lot_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lot_min"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lot_step"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"request_confirmation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"show"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spread_diff"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"trade"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"trade_rights"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"Forex"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"auto_closeout_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_agent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_agent_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_agent_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_base"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_lots_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"execution_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"free_margin_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ie_deviation"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ie_quick_mode"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lot_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lot_min"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lot_step"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"request_confirmation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"show"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spread_diff"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"trade"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"trade_rights"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"Futures2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"auto_closeout_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_agent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_agent_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_agent_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_base"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_lots_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"execution_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"free_margin_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ie_deviation"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ie_quick_mode"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lot_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lot_min"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lot_step"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"request_confirmation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"show"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spread_diff"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"trade"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"trade_rights"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"Indexes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"auto_closeout_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_agent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_agent_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_agent_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_base"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_lots_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"execution_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"free_margin_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ie_deviation"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ie_quick_mode"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lot_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lot_min"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lot_step"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"request_confirmation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"show"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spread_diff"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"trade"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"trade_rights"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="s2">"TEST"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"auto_closeout_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_agent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_agent_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_agent_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_base"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_lots_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_tax"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"commission_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"execution_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"free_margin_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ie_deviation"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ie_quick_mode"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lot_max"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lot_min"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lot_step"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"request_confirmation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"show"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"spread_diff"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"trade"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"trade_rights"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"signature"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Signature"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"smtp_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"login"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"smtp_password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"password"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"smtp_server"</span><span class="p">:</span><span class="w"> </span><span class="s2">"127.0.0.1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"stopout_skip_hedged"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"support_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a@a.lv"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"support_page"</span><span class="p">:</span><span class="w"> </span><span class="s2">"localhost"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"symbols"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"EURUSD"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"margin_pct"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"swap_long"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"swap_short"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"templates_path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c:/"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timeout_seconds"</span><span class="p">:</span><span class="w"> </span><span class="mi">60</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"use_swap"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight java tab-java"><code><span class="n">client</span><span class="o">.</span><span class="na">config</span><span class="o">().</span><span class="na">groups</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="s">"test"</span><span class="o">).</span><span class="na">block</span><span class="o">()</span>
+</code></pre>
+<p>Function: <code>config.group.get</code></p>
+
+<p>Returns:</p>
+
+<ul>
+<li><a href="#mt4congroup">Mt4ConGroup</a></li>
+</ul>
+<h2 id='group-deletion'>Group deletion</h2><pre class="highlight json tab-json"><code><span class="err">//</span><span class="w"> </span><span class="err">Request</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"config.group.del"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"group"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="err">//</span><span class="w"> </span><span class="err">Response</span><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OK"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight java tab-java"><code><span class="n">client</span><span class="o">.</span><span class="na">config</span><span class="o">().</span><span class="na">groups</span><span class="o">().</span><span class="na">delete</span><span class="o">(</span><span class="s">"test"</span><span class="o">).</span><span class="na">block</span><span class="o">();</span>
+</code></pre>
+<p>Function: <code>config.group.del</code></p>
+
+<p>Parameters:</p>
+
+<ul>
+<li><code>group</code>. Group name</li>
+</ul>
+<h2 id='tmp'>TMP</h2><pre class="highlight json tab-json"><code></code></pre><pre class="highlight java tab-java"><code><span class="err">```</span><span class="n">java</span>
+
+<span class="nl">Function:</span> <span class="err">`</span><span class="n">xxx</span><span class="err">`</span>
+
+<span class="nl">Parameters:</span>
+<span class="o">*</span> <span class="o">[</span><span class="n">Mt4ConGroup</span><span class="o">](</span><span class="err">#</span><span class="n">mt4congroup</span><span class="o">)</span>
+
+<span class="nl">Returns:</span>
+
+<span class="o">*</span> <span class="o">[</span><span class="n">Mt4ConGroup</span><span class="o">](</span><span class="err">#</span><span class="n">mt4congroup</span><span class="o">)</span>
+
+
+
+<span class="err">#</span> <span class="n">Types</span>
+
+<span class="err">##</span> <span class="n">Mt4ConCommon</span>
+
+<span class="n">Parameter</span><span class="o">|</span> <span class="n">Type</span> <span class="o">|</span> <span class="n">Note</span>
+<span class="o">---------</span> <span class="o">|</span> <span class="o">-----------</span> <span class="o">|</span> <span class="o">-----------</span>
+<span class="n">owner</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span> <span class="n">Read</span> <span class="n">only</span>
+<span class="n">name</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span> 
+<span class="n">adapters</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span> <span class="n">Read</span> <span class="n">only</span>
+<span class="n">optimization_last_time</span> <span class="o">|</span> <span class="n">unix</span> <span class="n">time</span> <span class="o">|</span> <span class="n">Read</span> <span class="n">only</span>
+<span class="n">server_version</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> <span class="o">|</span> <span class="n">Read</span> <span class="n">only</span>
+<span class="n">server_build</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> <span class="o">|</span> <span class="n">Read</span> <span class="n">only</span>
+<span class="n">last_order</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> <span class="n">Read</span> <span class="n">only</span>
+<span class="n">last_login</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> <span class="n">Read</span> <span class="n">only</span>
+<span class="n">lost_commission_login</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> <span class="n">Read</span> <span class="n">only</span> 
+<span class="n">address</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span> 
+<span class="n">port</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">timeout</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">type_of_demo</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">time_of_demo_days</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">daylight_correction</span> <span class="o">|</span> <span class="kt">boolean</span> <span class="o">|</span> 
+<span class="n">timezone</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">timesync_server</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span> 
+<span class="n">feeder_timeout_seconds</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">keep_emails_days</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">keep_ticks_days</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">statement_weekend</span> <span class="o">|</span> <span class="kt">boolean</span> <span class="o">|</span> 
+<span class="n">end_of_day_hour</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">end_of_day_minute</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">optimization_time_minutes</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span> 
+<span class="n">overmonth_last_month</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">antiflood</span> <span class="o">|</span> <span class="kt">boolean</span> <span class="o">|</span> 
+<span class="n">antiflood_max_connections</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">bind_adresses</span> <span class="o">|</span> <span class="n">array</span> <span class="n">of</span> <span class="n">strings</span> <span class="o">|</span> 
+<span class="n">web_adresses</span> <span class="o">|</span> <span class="n">array</span> <span class="n">of</span> <span class="n">strings</span> <span class="o">|</span> 
+<span class="n">statement_mode</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">liveupdate_mode</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">last_activate_time</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">stop_last_time</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">monthly_state_mode</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">rollovers_mode</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">path_database</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span> 
+<span class="n">path_history</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span> 
+<span class="n">path_log</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span> 
+<span class="n">overnight_last_day</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">overnight_last_time</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">overnight_prev_time</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">stop_delay_seconds</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">stop_reason</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">account_url</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span> 
+
+<span class="err">##</span> <span class="n">Mt4ConGroup</span>
+
+<span class="n">Parameter</span><span class="o">|</span> <span class="n">Type</span> <span class="o">|</span> <span class="n">Note</span>
+<span class="o">---------</span> <span class="o">|</span> <span class="o">-----------</span> <span class="o">|</span> <span class="o">-----------</span>
+<span class="n">group</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span>
+<span class="n">enable</span> <span class="o">|</span> <span class="kt">boolean</span> <span class="o">|</span>
+<span class="n">timeout_seconds</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span>
+<span class="n">otp_mode</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span>
+<span class="n">company</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span>
+<span class="n">signature</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span>
+<span class="n">support_page</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span>
+<span class="n">smtp_server</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span>
+<span class="n">smtp_login</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span>
+<span class="n">smtp_password</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span>
+<span class="n">support_email</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span>
+<span class="n">templates_path</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span>
+<span class="n">copies</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span>
+<span class="n">reports</span> <span class="o">|</span> <span class="kt">boolean</span> <span class="o">|</span>
+<span class="n">default_leverage</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span>
+<span class="n">default_deposit</span> <span class="o">|</span> <span class="kt">float</span> <span class="o">|</span>
+<span class="n">max_symbols</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span>
+<span class="n">currency</span> <span class="o">|</span> <span class="n">string</span> <span class="o">|</span>
+<span class="n">credit</span> <span class="o">|</span> <span class="kt">float</span> <span class="o">|</span>
+<span class="n">margin_call</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span>
+<span class="n">margin_mode</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span>
+<span class="n">margin_stopout</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span>
+<span class="n">interest_rate</span> <span class="o">|</span> <span class="kt">float</span> <span class="o">|</span>
+<span class="n">use_swap</span> <span class="o">|</span> <span class="kt">boolean</span> <span class="o">|</span>
+<span class="n">news</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span>
+<span class="n">rights</span> <span class="o">|</span> <span class="n">list</span> <span class="n">of</span> <span class="n">strings</span> <span class="o">|</span> <span class="n">Possible</span> <span class="nl">values:</span> <span class="o">[</span><span class="s">"email"</span><span class="o">,</span> <span class="s">"trailing"</span><span class="o">,</span> <span class="s">"advisor"</span><span class="o">,</span> <span class="s">"expiration"</span><span class="o">,</span> <span class="s">"signals_all"</span><span class="o">,</span> <span class="s">"signals_own"</span><span class="o">,</span> <span class="s">"risk_warning"</span><span class="o">,</span> <span class="s">"forced_otp"</span><span class="o">]</span>
+<span class="n">check_ie_prices</span> <span class="o">|</span> <span class="kt">boolean</span> <span class="o">|</span>
+<span class="n">max_positions</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span>
+<span class="n">close_reopen</span> <span class="o">|</span> <span class="kt">boolean</span> <span class="o">|</span>
+<span class="n">hedge_prohibited</span> <span class="o">|</span> <span class="kt">boolean</span> <span class="o">|</span>
+<span class="n">close_fifo</span> <span class="o">|</span> <span class="kt">boolean</span> <span class="o">|</span>
+<span class="n">hedge_large_leg</span> <span class="o">|</span> <span class="kt">boolean</span> <span class="o">|</span>
+<span class="n">margin_type</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span>
+<span class="n">archive_period</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span>
+<span class="n">archive_max_balance</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span>
+<span class="n">stopout_skip_hedged</span> <span class="o">|</span> <span class="kt">boolean</span> <span class="o">|</span>
+<span class="n">archive_pending_period</span> <span class="o">|</span> <span class="kt">boolean</span> <span class="o">|</span>
+<span class="n">news_languages</span> <span class="o">|</span> <span class="n">list</span> <span class="n">of</span> <span class="n">strings</span> <span class="o">|</span> <span class="n">Max</span> <span class="n">size</span> <span class="n">is</span> <span class="mi">7</span> <span class="n">elements</span>
+<span class="n">securities</span> <span class="o">|</span> <span class="n">map</span> <span class="n">of</span> <span class="o">[</span><span class="n">Mt4ConGroupSecurity</span><span class="o">](</span><span class="err">#</span><span class="n">mt4congroupsecurity</span><span class="o">)</span> <span class="o">|</span>
+<span class="n">symbols</span> <span class="o">|</span> <span class="n">map</span> <span class="n">of</span> <span class="o">[</span><span class="n">Mt4ConGroupMargin</span><span class="o">](</span><span class="err">#</span><span class="n">mt4congroupmargin</span><span class="o">)</span> <span class="o">|</span>
+
+<span class="err">##</span> <span class="n">Mt4ConGroupSecurity</span>
+
+<span class="n">Parameter</span><span class="o">|</span> <span class="n">Type</span> <span class="o">|</span> <span class="n">Note</span>
+<span class="o">---------</span> <span class="o">|</span> <span class="o">-----------</span> <span class="o">|</span> <span class="o">-----------</span>
+<span class="n">show</span> <span class="o">|</span> <span class="kt">boolean</span> <span class="o">|</span> 
+<span class="n">trade</span> <span class="o">|</span> <span class="kt">boolean</span> <span class="o">|</span> 
+<span class="n">execution_mode</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">commission_base</span> <span class="o">|</span> <span class="kt">float</span> <span class="o">|</span> 
+<span class="n">commission_type</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">commission_lots_mode</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">commission_agent</span> <span class="o">|</span> <span class="kt">float</span> <span class="o">|</span> 
+<span class="n">commission_agent_type</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">spread_diff</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">lot_min</span> <span class="o">|</span> <span class="kt">float</span> <span class="o">|</span> 
+<span class="n">lot_max</span> <span class="o">|</span> <span class="kt">float</span> <span class="o">|</span> 
+<span class="n">lot_step</span> <span class="o">|</span> <span class="kt">float</span> <span class="o">|</span> 
+<span class="n">ie_deviation</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">request_confirmation</span> <span class="o">|</span> <span class="kt">boolean</span> <span class="o">|</span> 
+<span class="n">trade_rights</span> <span class="o">|</span> <span class="n">string</span> <span class="kd">enum</span> <span class="o">|</span> <span class="n">One</span> <span class="n">of</span> <span class="o">[</span><span class="s">"deny-close-by"</span><span class="o">,</span> <span class="s">"deny-multiple-close-by"</span><span class="o">]</span>
+<span class="n">ie_quick_mode</span> <span class="o">|</span> <span class="kt">boolean</span> <span class="o">|</span> 
+<span class="n">auto_closeout_mode</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">commission_tax</span> <span class="o">|</span> <span class="kt">float</span> <span class="o">|</span> 
+<span class="n">commission_agent_mode</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+<span class="n">free_margin_mode</span> <span class="o">|</span> <span class="n">integer</span> <span class="o">|</span> 
+
+<span class="err">##</span> <span class="n">Mt4ConGroupMargin</span>
+
+<span class="n">Parameter</span><span class="o">|</span> <span class="n">Type</span> <span class="o">|</span> <span class="n">Note</span>
+<span class="o">---------</span> <span class="o">|</span> <span class="o">-----------</span> <span class="o">|</span> <span class="o">-----------</span>
+<span class="n">swap_long</span> <span class="o">|</span> <span class="kt">float</span> <span class="o">|</span>
+<span class="n">swap_short</span> <span class="o">|</span> <span class="kt">float</span> <span class="o">|</span>
+<span class="n">margin_pct</span> <span class="o">|</span> <span class="kt">float</span> <span class="o">|</span>
+</code></pre>
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="json">json</a>
+                <a href="#" data-language-name="java">java</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

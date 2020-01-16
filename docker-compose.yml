@@ -1,0 +1,9 @@
+slate:
+  build: .
+  container_name: slate
+  ports:
+    - 4567:4567
+  volumes:
+    - ./docs:/slate/source/build
+    - ./docs-sources:/slate/source/source
+  command:  bundle exec middleman server --watcher-force-polling  --verbose

@@ -6,4 +6,4 @@ slate:
   volumes:
     - ./docs:/slate/source/build
     - ./docs-sources:/slate/source/source
-  command:  bundle exec middleman server --watcher-force-polling  --verbose
+#  command:  bundle exec middleman server --watcher-force-polling  --verbose

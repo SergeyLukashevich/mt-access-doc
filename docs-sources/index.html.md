@@ -28,13 +28,13 @@ Native MT4 Manager API client provided by Metaquotes as a DLL file has few disad
 
 1. Modern, Web-based connection based on WebSocket
 1. Platform independent API
-1. Possibility to use a ready client library. We have language bindings in Java. Python and PHP clients are in progress.
-1. Easy to use API to make your client for any modern programming language.
-1. Hiden complexity of native API.
+1. Possibility to use a ready client library. We have language bindings in Java. Python and JavaScript clients are in progress.
+1. Easy to use API that allows to make your client application for any modern programming language.
+1. Hiden complexity of a native API.
 
 # Language bindings
 
-1. Java - TODO
+1. [Java](https://github.com/SergeyLukashevich/mt-remote-java)
 
 # Security
 

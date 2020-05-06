@@ -1,12 +1,12 @@
 ---
-title: MT Remote API Reference
+title: MT Access API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - json
   - java
 
 toc_footers:
-  - <a href='mailto:sergey.lukashevich@finplant.com?subject=MT Remote request'>Contacts</a>
+  - <a href='mailto:sergey.lukashevi4@gmail.com?subject=MT Access request'>Contacts</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 search: true
@@ -14,7 +14,7 @@ search: true
 
 # Introduction
 
-Welcome to the MT Remote! It's an application that provides you easy accessible API to [MT4 server](https://en.wikipedia.org/wiki/MetaTrader_4).
+Welcome to the MT Access! It's an application that provides you easy accessible API to [MT4 server](https://en.wikipedia.org/wiki/MetaTrader_4).
 You can use our API based on [WebSocket](https://en.wikipedia.org/wiki/WebSocket) to use most functions provided by [MT4 Manager API](https://www.metatrader4.com/en/brokers/api)
 
 # Native API cons
@@ -24,7 +24,7 @@ Native MT4 Manager API client provided by Metaquotes as a DLL file has few disad
 1. A client application can be launched either on Windows or use Windows emulator
 1. A client application should be written either on C++ or C#. As an option is possible to use language-specific wrappers that cause performance drop and leads to the necessity to wrap every DLL function.
 
-# MT Remote pros
+# MT Access pros
 
 1. Modern, Web-based connection based on WebSocket
 1. Platform independent API
@@ -34,11 +34,11 @@ Native MT4 Manager API client provided by Metaquotes as a DLL file has few disad
 
 # Language bindings
 
-1. [Java](https://github.com/SergeyLukashevich/mt-remote-java)
+1. [Java](https://github.com/SergeyLukashevich/mt-access-java)
 
 # Security
 
-* MT Remote provides both plain and encrypted communication. 
+* MT Access provides only encrypted communication. 
 * MT4 manager credentials are used for authentification on the MT4 server side.
 
 # Message format
@@ -55,7 +55,7 @@ Native MT4 Manager API client provided by Metaquotes as a DLL file has few disad
 }
 ```
 
-Client to MT Remote
+Client to MT Access
 
 * `id`. Request/response ID. Unique per session.
 * `name`. Called function name
@@ -78,7 +78,7 @@ Client to MT Remote
 }
 ```
 
-MT Remote to client
+MT Access to client
 
 * `id`. Response ID. Matches the respective request.
 * `status`. Response if successful if `OK`. All other values should be treated as an error.
@@ -94,7 +94,7 @@ MT Remote to client
 }
 ```
 
-MT Remote to client
+MT Access to client
 
 * `id`. Response ID. Matches the respective request.
 * `status`. The response contains error if a value is not `OK`.
@@ -115,7 +115,7 @@ MT Remote to client
 }
 ```
 
-MT Remote to client
+MT Access to client
 
 * `event`. Event name.
 * `event_id`. Incremental event ID. Unique per session.
@@ -123,55 +123,24 @@ MT Remote to client
 
 # Connection
 
-## Connection to MT Remote
+## Connection to MT Access and MT4 server
 
 ```java
-import com.finplant.mt_remote_client.MtRemoteClient;
+import lv.sergluka.mt_access.MtAccessClient;
 
-MtRemoteClient client = new MtRemoteClient()
-client.connect(URI.create("ws://127.0.0.1")).block();
+var params = MtAccessClient.ConnectionParameters.builder()
+        .uri("wss://127.0.0.1")
+        .server("127.0.0.1")
+        .login(1)
+        .password("password")
+        .build()
+var client = MtAccessClient.create(params,
+       BaseSpecification.classLoader.getResourceAsStream("keystore.jks"), "keystore_password")
+
+client.connect().timeut(Duration.ofSeconds(20)).block();
 ```
 
-Connects to MT Remote service.
-
-## Connection to MT4 server
-
-```json
-
-// Request
-{
-  "name": "connect",
-  "id": 0,
-  "data": {
-    "server": "127.0.0.1",
-    "login": 1,
-    "password": "password",
-    "reconnect_delay": 10000
-  }
-}
-
-// Response
-{
-  "id": 0,
-  "status": "OK"
-}
-```
-
-```java
-client.connectToMt("127.0.0.1", 1, "password", Duration.ofSeconds(10)).block();
-```
-
-Connects to the MT4 server. Only one connection is allowed per WebSocket session.
-
-Function: `connect`
-
-Request:
-
-* `server`. MT4 server hostname
-* `login`. MT4 manager login
-* `password`. MT4 manager password
-* `reconnect_delay`. MT4 connection restoration delay in milliseconds. Use 0 to disable.
-
+Connects to the MT4 server. MT4 server credential are passed in UpgradeRequest headers
 
 # Configuration
 
@@ -937,15 +906,15 @@ Parameters:
     "read_only": false,
     "enable_otp": false,
     "password_phone": "PhonePass",
-    "name": "FinPlant",
+    "name": "User1",
     "country": "Latvia",
     "city": "Riga",
     "state": "n/a",
     "zipcode": "LV-1063",
-    "address": "Maskavas 322 - 501",
+    "address": "Maskavas 322",
     "lead_source": "Source",
     "phone": "+37100112233",
-    "email": "sergey.lukashevich@finplant.com",
+    "email": "sergey.lukashevi4@gmail.com",
     "comment": "User comment",
     "id": "id1",
     "status": "STATUS",
@@ -985,10 +954,10 @@ var user = UserRecord.builder()
         .city("Riga")
         .state("n/a")
         .zipcode("LV-1063")
-        .address("Maskavas 322 - 501")
+        .address("Maskavas 322")
         .leadSource("Source")
         .phone("+37100112233")
-        .email("sergey.lukashevich@finplant.com")
+        .email("sergey.lukashevi4@gmail.com")
         .comment("User comment")
         .id("id1")
         .status("STATUS")
@@ -1185,7 +1154,7 @@ Returns:
       "zipcode": ""
     },
     {
-      "address": "Maskavas 322 - 501",
+      "address": "Maskavas 322",
       "agent_account": 1,
       "api_data": "",
       "balance": 0.0,
@@ -2276,7 +2245,7 @@ Returns:
 
 # Events
 
-MT Remote allows us to listen to a certain type of MT4 events and propagate them.
+MT Access allows us to listen to a certain type of MT4 events and propagate them.
 
 Function: `subscribe` and `unsubscribe`
 
@@ -2538,7 +2507,7 @@ Payload:
 // Event
 {
   "data": {
-    "address": "Maskavas 322 - 501",
+    "address": "Maskavas 322",
     "agent_account": 1,
     "api_data": "AAECAwQFBgcICQoLDA0ODw==",
     "balance": 0.0,
@@ -3018,6 +2987,6 @@ interestrate | float |
 balance | float |
 credit | float |
 
-# How to get MT Remote?
+# How to get MT Access?
 
-Please [contact us](https://www.finplant.com/contact)
+Please [contact us](mailto:sergey.lukashevi4@gmail.com?subject=MT%20Access%20request)
